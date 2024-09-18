@@ -13,6 +13,7 @@ import { ComponentsDashboardComponent } from './components-dashboard/components-
 import { ComponentsAddUserComponent } from './components-add-user/components-add-user.component';
 import { ComponentsUserDetailsComponent } from './components-user-details/components-user-details.component';
 import { ComponentsDeleteUserComponent } from './components-delete-user/components-delete-user.component';
+import { ComponentsUpdateUserInfoComponent } from './components-update-user-info/components-update-user-info.component';
 
 /**
  * Defines routes in the application, mapping each path to the respective component.
@@ -22,8 +23,9 @@ const routes: Routes = [
   { path: 'login', component: ComponentsLoginComponent }, // Route for login page
   { path: 'dashboard', component: ComponentsDashboardComponent }, // Route for dashboard page
   { path: 'add-user', component: ComponentsAddUserComponent }, // Route for adding a new user
-  { path: 'user-details', component: ComponentsUserDetailsComponent }, // Route to display user details
+  { path: 'read-user', component: ComponentsUserDetailsComponent }, // Route to display user details
   { path: 'delete-user', component: ComponentsDeleteUserComponent }, // Route to delete user data
+  { path: 'update-user', component: ComponentsUpdateUserInfoComponent }, // Route to delete user data
   { path: '', redirectTo: '/login', pathMatch: 'full' } // Default route redirects to login
 ];
 

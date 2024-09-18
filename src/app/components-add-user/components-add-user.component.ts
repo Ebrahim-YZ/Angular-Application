@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-components-add-user',
@@ -14,7 +15,11 @@ export class ComponentsAddUserComponent implements OnInit {
     { label: 'Designer', value: 'designer' },
     { label: 'Manager', value: 'manager' }
   ];
-  constructor(private fb: FormBuilder) { }
+
+  constructor(
+    private fb: FormBuilder,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) { }
 
   ngOnInit() {
     this.signupForm = this.fb.group({
@@ -27,9 +32,7 @@ export class ComponentsAddUserComponent implements OnInit {
     }, {
       validator: this.passwordMatchValidator
     });
-
   }
-
 
   passwordMatchValidator(group: FormGroup) {
     const password = group.get('password')?.value;
@@ -38,13 +41,13 @@ export class ComponentsAddUserComponent implements OnInit {
   }
 
   /**
- * Handles the form submission event.
- * - Logs the form submission details.
- * - Validates the form data.
- * - If valid, saves the form data to the browser's localStorage.
- * - If localStorage is not available, logs a warning.
- * - If the form is invalid, logs an error message.
- */
+   * Handles the form submission event.
+   * - Logs the form submission details.
+   * - Validates the form data.
+   * - If valid, saves the form data to the browser's localStorage.
+   * - If localStorage is not available, logs a warning.
+   * - If the form is invalid, logs an error message.
+   */
   onSubmit() {
     // Log the form submission and its current values
     console.log('Form submitted', this.signupForm.value);
@@ -52,7 +55,7 @@ export class ComponentsAddUserComponent implements OnInit {
     // Check if the form is valid
     if (this.signupForm.valid) {
       // Ensure window object and localStorage are available (for server-side rendering cases)
-      if (typeof window !== 'undefined' && window.localStorage) {
+      if (isPlatformBrowser(this.platformId)) {
         // Save the form data to localStorage in JSON format
         localStorage.setItem('signupFormData', JSON.stringify(this.signupForm.value));
       } else {
@@ -64,5 +67,4 @@ export class ComponentsAddUserComponent implements OnInit {
       console.log('Form is invalid');
     }
   }
-
 }
