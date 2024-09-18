@@ -1,0 +1,18 @@
+<div class="dashboard-container">
+    <!-- Button to toggle the visibility of the sidebar -->
+    <button pButton icon="pi pi-bars" label="Menu" (click)="toggleSidebar()"></button>
+    
+    <!-- Sidebar component -->
+    <!-- The sidebar visibility is bound to the 'visible' property and positioned on the left -->
+    <p-sidebar [(visible)]="visible" position="left" [styleClass]="'custom-sidebar'">
+        <!-- Menu component inside the sidebar -->
+        <!-- The 'items' array from the component defines the menu options -->
+        <p-menu [model]="items" [routerLinkActive]="['active']"></p-menu>
+    </p-sidebar>
+
+    <!-- Main content section where routed components will be displayed -->
+    <!-- The 'router-outlet' dynamically loads the routed component here -->
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

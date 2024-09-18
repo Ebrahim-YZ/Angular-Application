@@ -1,0 +1,31 @@
+.dashboard-container {
+    display: flex;
+  }
+  
+  .p-sidebar {
+    width: 250px;
+  }
+  
+  .p-menuitem {
+    padding: 10px 20px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .custom-sidebar {
+    width: 250px; /* Adjust width as needed */
+}
+.p-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Optional: Styling for responsiveness */
+@media (max-width: 768px) {
+    .custom-sidebar {
+        width: 200px; /* Adjust for smaller screens */
+    }
+}

@@ -1,0 +1,50 @@
+<div class="login-container">
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="logo">
+        <img [src]="imagePath" alt="Logo">
+        <p>Science Museum - MMS</p>
+      </div>
+    </ng-template>
+
+    <form class="login-form">
+      <div class="form-group">
+        <p-inputGroup>
+          <span pInputGroupAddon class="icon-spacing">
+            <i class="pi pi-user"></i> <!-- PrimeNG user icon -->
+          </span>
+          <input type="text" id="username" name="username" class="form-control" pInputText [(ngModel)]="username"
+            placeholder="Username">
+        </p-inputGroup>
+      </div>
+
+      <div class="form-group">
+        <p-inputGroup>
+          <span pInputGroupAddon class="icon-spacing">
+            <i class="pi pi-lock"></i> <!-- PrimeNG password lock icon -->
+          </span>
+          <input type="password" id="password" name="password" class="form-control" pInputText [(ngModel)]="password"
+            placeholder="Password">
+        </p-inputGroup>
+      </div>
+
+      <!-- Remember Password Checkbox -->
+      <div class="form-group">
+        <p-checkbox id="rememberPassword" name="rememberPassword" [(ngModel)]="rememberPassword"
+          binary="true"></p-checkbox>
+        <label for="rememberPassword" class="label-spacing">Remember Me</label>
+      </div>
+
+      <!-- Login Button -->
+      <div class="buttons">
+        <button pButton type="button" label="Sign In" class="p-button-rounded" (click)="onSubmit()"></button>
+      </div>
+
+
+      <!-- Forgot Password Link -->
+      <div class="forgot-password">
+        <a href="#" (click)="onForgotPassword()">Forgot Password?</a>
+      </div>
+    </form>
+  </p-card>
+</div>

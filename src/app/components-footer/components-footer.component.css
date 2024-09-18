@@ -1,0 +1,42 @@
+/* General Footer Styling */
+.custom-footer {
+  font-family: Arial, sans-serif; /* Common font style */
+  font-size: 13px; /* Font size */
+  background-color: #f4f4f4; /* Light background */
+  padding: 10px 0; /* Padding around the footer */
+  text-align: center; /* Center the text */
+  border-top: 1px solid #ccc; /* Border on top */
+  left: 0;
+  bottom: 0;
+  top: 8px;
+  width: 100%; /* Full width */
+  position: relative; /* Remove fixed positioning */
+}
+
+/* Footer content styling */
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 100px; /* Adjust height as necessary */
+}
+
+/* Center Links */
+.custom-footer a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  
+
+}
+
+.custom-footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styling (if needed) */
+@media (max-width: 768px) {
+  .footer-content {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}

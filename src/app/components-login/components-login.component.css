@@ -1,0 +1,128 @@
+.login-container {
+  text-align: center;
+  padding: 150px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Add spacing between icons and input fields */
+.icon-spacing {
+  margin-right: 5px;
+}
+
+/* Add spacing for the 'Remember Password' label */
+.label-spacing {
+  margin-left: 8px;
+}
+
+/* Forgot password link spacing */
+.forgot-password {
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  /* Link color */
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.p-checkbox .p-checkbox-box {
+  width: 1.2em;
+  /* Adjust the size of the checkbox */
+  height: 1.2em;
+}
+
+.p-checkbox .p-checkbox-icon {
+  font-size: 1em;
+  /* Adjust the size of the checkmark */
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.form-control {
+  height: 25px;
+  /* Further reduce the height */
+  font-size: 12px;
+  /* Reduce font size */
+  padding: 2px 10px;
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.forgot-password a {
+  color: #007bff;
+  /* Link color */
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+
+
+.form-group label {
+  margin-bottom: 3px;
+  /* Reduce label spacing */
+  font-size: 12px;
+  /* Reduce label font size */
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.p-inputgroup .pi {
+  font-size: 1rem;
+  /* Adjust icon size */
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 15px;
+  /* Reduce bottom margin */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
+  /* Reduce image size */
+  object-fit: contain;
+}
+
+.p-button {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 25px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 10px;
+  }
+}
+
+
+.p-card {
+  padding: 20px;
+}

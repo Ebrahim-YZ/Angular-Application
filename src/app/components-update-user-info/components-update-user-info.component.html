@@ -1,0 +1,48 @@
+<div class="update-container">
+  <h2>Update User Info</h2>
+
+  <p-table [value]="userData" [responsiveLayout]="'scroll'" scrollable="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Full name</th>
+        <th>Email address</th>
+        <th>Phone number</th>
+        <th>Select job type</th>
+        <th>Password</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+      <tr>
+        <td>
+          <label for="fullName-{{i}}">Full name:</label>
+          <input id="fullName-{{i}}" type="text" [(ngModel)]="userData[i].fullName" placeholder="Enter full name" />
+        </td>
+        <td>
+          <label for="email-{{i}}">Email address:</label>
+          <input id="email-{{i}}" type="email" [(ngModel)]="userData[i].email" placeholder="Enter email address" />
+        </td>
+        <td>
+          <label for="phoneNumber-{{i}}">Phone number:</label>
+          <input id="phoneNumber-{{i}}" type="tel" [(ngModel)]="userData[i].phoneNumber" placeholder="Enter phone number" />
+        </td>
+        <td>
+          <label for="jobType-{{i}}">Select job type:</label>
+          <p-dropdown
+            id="jobType-{{i}}"
+            [options]="jobTypes"
+            [(ngModel)]="userData[i].jobType"
+            placeholder="Select job type">
+          </p-dropdown>
+        </td>
+        <td>
+          <label for="password-{{i}}">Password:</label>
+          <input id="password-{{i}}" type="password" [(ngModel)]="userData[i].password" placeholder="Enter password" />
+        </td>
+        <td>
+          <button (click)="updateUser(i)">Update</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

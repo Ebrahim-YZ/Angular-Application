@@ -1,0 +1,28 @@
+<div class="table-container">
+  <h2>Registered Users</h2>
+
+  <p-table [value]="[userData]" [responsiveLayout]="'scroll'" scrollable="true">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Full name</th>
+        <th>Email address</th>
+        <th>Phone number</th>
+        <th>Select job type</th>
+        <th>Password</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phoneNumber }}</td>
+        <td>{{ user.jobType }}</td>
+        <td>{{ user.password }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div *ngIf="!userData">
+    <p>No user data available.</p>
+  </div>
+</div>
